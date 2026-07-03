@@ -17,6 +17,9 @@ app.use('/api/auth', authRoutes)
 app.use('/api/superadmin',superAdminRoutes)
 app.use('/api/flags',flagRoutes)
 app.use('/api/public',publicRoutes)
+app.get('/', (req, res) => {
+  res.send('Feature flag backend is running')
+})
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('MongoDB connected')
