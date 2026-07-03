@@ -45,7 +45,6 @@ This decision was made deliberately to avoid over-scoping the assignment with un
 - **Feature flags are scoped to the organization, not the individual admin who created them.** Since multiple Organization Admins can belong to the same org, all flag queries and mutations use `orgId`, not `userId` — any admin in an org can manage that org's flags, similar to shared workspace permissions.
 - **Three separate front-end apps**, one per role, rather than a single app with conditional UI. This mirrors the different trust levels between Super Admin (internal), Org Admin (authenticated customer), and End User (public/anonymous), and avoids role-based conditional rendering in one codebase.
 - **Duplicate flag keys are prevented per organization** using a compound unique index on `(key, orgId)` — the same key can exist across different organizations (expected, multi-tenant), but not twice within the same organization.
-- **Checking a nonexistent flag returns `enabled: false` with a 404**, distinguishing "flag exists but disabled" from "flag was never created for this org" at the API level, while the End User UI treats both as simply "Disabled" for simplicity.
 
 ## Super Admin credentials
 
