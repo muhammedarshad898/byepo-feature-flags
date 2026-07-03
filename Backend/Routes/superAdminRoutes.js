@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { createOrganization, getOrganizations } = require('../controllers/superAdminController')
+const { createOrganization, getOrganizations } = require('../Controllers/superAdminController')
 const authMiddleware = require('../middleware/authMiddleware')
 const roleMiddleware = require('../middleware/roleMiddleware')
 

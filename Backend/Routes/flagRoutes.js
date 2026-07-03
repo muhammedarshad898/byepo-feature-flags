@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { createFlag, getFlags, updateFlag, deleteFlag } = require('../controllers/flagController')
+const { createFlag, getFlags, updateFlag, deleteFlag } = require('../Controllers/flagController')
 const authMiddleware = require('../middleware/authMiddleware')
 const roleMiddleware = require('../middleware/roleMiddleware')
 
